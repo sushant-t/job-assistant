@@ -1,5 +1,4 @@
 import LoadingDots from "@/components/LoadingDots";
-import { NextPage } from "next";
 import Head from "next/head";
 import { useState, useRef } from "react";
 import { Toaster, toast } from "react-hot-toast";
@@ -70,7 +69,10 @@ export default function Summary() {
       </Head>
 
       <main className="flex flex-1 w-full flex-col items-center justify-center text-center px-4 mt-12 sm:mt-20">
-        <div className="max-w-xl w-full">
+        <div className="max-w-3xl w-full">
+          <h1 className="mt-0 w-full mb-2 text-5xl font-medium leading-tight text-primary">
+            Resume Summary Generator
+          </h1>
           <div className="flex mt-10 items-center space-x-3">
             <p className="text-left font-medium">
               Write a few sentences about yourself and what you are looking for.{" "}
