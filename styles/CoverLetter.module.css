@@ -1,0 +1,11 @@
+.cover {
+  white-space: pre-wrap;
+  text-align: left;
+}
+
+.drag-active {
+  background-color: rgb(203 213 225);
+  -webkit-transition: background-color 100ms linear;
+  -ms-transition: background-color 100ms linear;
+  transition: background-color 100ms linear;
+}
