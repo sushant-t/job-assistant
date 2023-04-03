@@ -37,11 +37,8 @@ export async function OpenAIRequest(payload: OpenAIRequestPayload) {
       function prepareChunk(chunk: Uint8Array) {
         let str = decoder.decode(chunk).trim();
         str = str.replace(/^data: /, "");
-        // console.log("s", str);
-        console.log("final enqueue", str);
         if (str === "[DONE]") {
           str = "";
-          console.log("closing controller");
           controller.close();
           return;
         }
@@ -51,7 +48,7 @@ export async function OpenAIRequest(payload: OpenAIRequestPayload) {
           let text = json.choices[0].delta?.content || "";
           controller.enqueue(encoder.encode(text));
         } catch (err) {
-          //   console.error(err);
+          console.error(err);
         }
       }
 

@@ -10,7 +10,7 @@
     "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
 
   --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
+  --background-start-rgb: 226, 232, 240;
   --background-end-rgb: 255, 255, 255;
 
   --primary-glow: conic-gradient(
@@ -69,10 +69,4 @@ body {
 a {
   color: inherit;
   text-decoration: none;
-}
-
-@media (prefers-color-scheme: light) {
-  html {
-    color-scheme: dark;
-  }
 }
