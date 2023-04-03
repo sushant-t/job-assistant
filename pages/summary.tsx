@@ -9,7 +9,7 @@ export default function Summary() {
   const [generatedBios, setGeneratedBios] = useState<String>("");
 
   const bioRef = useRef<null | HTMLDivElement>(null);
-
+  const maxTokens = 200;
   const scrollToBios = () => {
     if (bioRef.current !== null) {
       bioRef.current.scrollIntoView({ behavior: "smooth" });
@@ -33,7 +33,8 @@ export default function Summary() {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        prompt,
+        prompt: prompt,
+        maxTokens: maxTokens,
       }),
     });
 

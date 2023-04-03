@@ -9,14 +9,14 @@ export const config = {
 };
 
 const handler = async (req: Request): Promise<Response> => {
-  const { prompt } = (await req.json()) as {
+  const { prompt, maxTokens } = (await req.json()) as {
     prompt?: string;
+    maxTokens: number;
   };
 
   if (!prompt) {
     return new Response("No prompt in the request", { status: 400 });
   }
-
   const payload: OpenAIRequestPayload = {
     model: "gpt-3.5-turbo",
     messages: [{ role: "user", content: prompt }],
@@ -24,7 +24,7 @@ const handler = async (req: Request): Promise<Response> => {
     top_p: 1,
     frequency_penalty: 0,
     presence_penalty: 0,
-    max_tokens: 200,
+    max_tokens: maxTokens,
     stream: true,
     n: 1,
   };
